@@ -275,6 +275,7 @@ export default class ReactTable extends Methods(Lifecycle(Component)) {
           <TrComponent
             className={theadGroupTrProps.className}
             style={theadGroupTrProps.style}
+            tbody={false}
             {...theadGroupTrProps.rest}
           >
             {headerGroups.map(makeHeaderGroup)}
@@ -366,6 +367,7 @@ export default class ReactTable extends Methods(Lifecycle(Component)) {
           <TrComponent
             className={theadTrProps.className}
             style={theadTrProps.style}
+            tbody={false}
             {...theadTrProps.rest}
           >
             {allVisibleColumns.map(makeHeader)}
@@ -454,6 +456,7 @@ export default class ReactTable extends Methods(Lifecycle(Component)) {
           <TrComponent
             className={theadFilterTrProps.className}
             style={theadFilterTrProps.style}
+            tbody={false}
             {...theadFilterTrProps.rest}
           >
             {allVisibleColumns.map(makeFilter)}
@@ -484,6 +487,7 @@ export default class ReactTable extends Methods(Lifecycle(Component)) {
           <TrComponent
             className={classnames(trProps.className, row._viewIndex % 2 ? '-even' : '-odd')}
             style={trProps.style}
+            tbody={true}
             {...trProps.rest}
           >
             {allVisibleColumns.map((column, i2) => {
@@ -716,6 +720,7 @@ export default class ReactTable extends Methods(Lifecycle(Component)) {
               trProps.className
             )}
             style={trProps.style || {}}
+            tbody={true}
           >
             {allVisibleColumns.map(makePadColumn)}
           </TrComponent>
@@ -785,6 +790,7 @@ export default class ReactTable extends Methods(Lifecycle(Component)) {
           <TrComponent
             className={classnames(tFootTrProps.className)}
             style={tFootTrProps.style}
+            tbody={false}
             {...tFootTrProps.rest}
           >
             {allVisibleColumns.map(makeColumnFooter)}
